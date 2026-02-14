@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#This script will loop to install nginx, curl, wget 
 if [ "$EUID" -ne 0 ]
 then
 	echo "Run as root"
