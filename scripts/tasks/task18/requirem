@@ -1,0 +1,12 @@
+1. A function to print **hostname and OS info**
+2. A function to print **uptime**
+3. A function to print **disk usage** (top 5 by size)
+4. A function to print **memory usage**
+5. A function to print **top 5 CPU-consuming processes**
+6. A  function that calls all of the above with section headers
+7. Use  at the top
+hostname
+uname -a
+df -h | sort -rh -k5 | head -5
+free -h
+ps -eo pid,%cpu,%mem,stat,start,command --sort=-%cpu| head -6
