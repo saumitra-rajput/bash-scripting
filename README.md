@@ -1,4 +1,6 @@
-# Bash Scripting 📜 :shipit:
+# Bash Scripting 📜 
+
+:shipit:
 
 A step-by-step Bash scripting learning journey — with functional shell scripts for everyday automation.
 
@@ -18,12 +20,18 @@ Bash (Bourne-Again Shell) is the default Unix/Linux shell used for shell scripti
 
 ---
 
+
+
 ## 🗂️ Repository Structure
+
+```
+.
 ├── scripts/
-│ └── *.sh # Bash script files
-├── projects/ # real world use case projects
-├── README.md # This documentation
-└── LICENSE # MIT License
+│   └── *.sh              # Bash script files
+├── projects/             # Real world use case projects
+├── README.md             # This documentation
+└── LICENSE               # MIT License
+```
 
 
 💡 Each script can be run independently and includes inline comments for learning.
@@ -44,6 +52,7 @@ cd bash-scripting/scripts
 # make executable and run
 chmod +x scriptname.sh
 ./scriptname.sh
+```
 
 
 ### Will continue add more usefull scripts
