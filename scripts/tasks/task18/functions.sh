@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# function to greet user based on user's input
+
 #defining the functions
 
 greet (){

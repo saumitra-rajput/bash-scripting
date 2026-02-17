@@ -1,5 +1,8 @@
 #!/bin/bash
-#
+
+
+# Diferent use case of for loop
+
 # This will print the values store in script range
 for i in apple oranage brianjal potato banana
 

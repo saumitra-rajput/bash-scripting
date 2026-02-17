@@ -1,5 +1,12 @@
 #!/bin/bash
 
+###################################################################################################
+# About: 
+# This script will take the back file path and create the back at dest location.
+# It will only keep lastest 5 backup files.
+# Will run with the crontab -e job.
+###################################################################################################
+
 set -e
 
 if [ $# -eq 0 ]
@@ -8,39 +15,45 @@ then
 	echo "E.g: /home/ubuntu/folder/"
 	exit 1
 else
-	echo "Checking requirements.."
+	echo "____________________________________Checking requirements_______________________________________"
 
 fi
 src="$1"
 echo "This is our source location: $1"
-echo "__________Backup will store at ~/my-backup_______________"
 
+echo "________________________________Backup will store at ~/my-backup________________________________"
 dest="/home/ubuntu/my-backup/"
 
 DT="$(date '+%Y-%m-%d-%H-%M')"
+
 
 create_backup() {
 
 	tar -cvzf "${dest}/backup-${DT}".tar.gz "$src" > /dev/null 
 	if [ $? -eq 0  ]
 	then
-		echo "__________Backup created successfully at $dest._____________"
+		echo "______________________________Backup created successfully at $dest._____________________________"
 	fi
 }
 
 log_rotate() {
+
 	#using flag l list, s blocksize, h humanreadable, t timewise sort
-	echo "_________Latestt 5 Backups listed below_______________"
+
+	echo "_________________________________Latestt 5 Backups listed below_________________________________"
+
 	ls -lsht /home/ubuntu/my-backup/ | awk ' NR>=2 && NR<=6 {print $1,$7,$8,$9,$10}'
-	#we can also use grep and head to get latest five
-	#ls -lsht /home/ubuntu/my-backup/ | awk '{print $1,$7,$8,$9,$10}' | grep .gz | head -n 5
+
+	# we can also use grep and head to get latest five
+	#
+	# ls -lsht /home/ubuntu/my-backup/ | awk '{print $1,$7,$8,$9,$10}' | grep .gz | head -n 5
 	
 	# checking count of backup more than 5: bckup5
 	bckup5=($(ls -t "${dest}"/*.gz 2>/dev/null)) 
 
 	if [ "${#bckup5[@]}" -gt 5 ]
 	then
-		echo "_____________Performing LOG Rotation_________________"
+		echo "___________________________________Performing LOG Rotation______________________________________"
 		
 		# files to be deleted: tbd
 		tbd=("${bckup5[@]:5}")
@@ -51,14 +64,14 @@ log_rotate() {
 			echo "Deleting file: $i"
 		done
 	fi
-	echo "_______________Log Rotation Completed_________________"
+	echo "____________________________________Log Rotation Completed______________________________________"
 }
 
 
 # calling functions
 
 create_backup
-#log_rotate
+log_rotate
 
 
 # creating function

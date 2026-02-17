@@ -1,6 +1,9 @@
 #!/bin/bash
-#
-#
+
+# Check the number if postive or negative
+
+
+
 read -p "Enter number: " num
 
 if  [ "$num" -eq 0 ];

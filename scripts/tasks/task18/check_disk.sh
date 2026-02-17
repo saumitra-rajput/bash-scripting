@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# basic function to display diskspace and current memory
+
 #defining functions
 
 check_disk () {

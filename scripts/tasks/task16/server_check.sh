@@ -1,5 +1,7 @@
 #!/bin/bash
-#
+
+# takes service name as input
+# check the status of service base on user's input
 
 read -p "Enter the Service name: " sname
 

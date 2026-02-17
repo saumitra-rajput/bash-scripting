@@ -1,5 +1,6 @@
 #!/bin/bash
-#
+
+# print the reverse count based on user's input
 
 read -p "Enter a non zero number: " num
 

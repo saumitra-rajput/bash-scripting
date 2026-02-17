@@ -1,6 +1,10 @@
 #!/bin/bash
 
 ################################################################################################
+# About
+# This script can take file path as input and will check the files if they are last modified
+# seven days ago it will back at dest location and it will delete the files which are older than
+# 30 days
 ################################################################################################
 
 set -euo pipefail

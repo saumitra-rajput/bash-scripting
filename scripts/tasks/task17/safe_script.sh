@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# error handling
+
 set -e
 
 mkdir /tmp/devops-test || { echo "Dir already exists"; exit 1; }

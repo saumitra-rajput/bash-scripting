@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# try and catch method
+
 set -euo pipefail
 
 
