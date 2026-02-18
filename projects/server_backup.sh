@@ -4,7 +4,7 @@
 # About
 # This script can takes source and destionation path as an argument.
 # Create archive file for provided path.
-# Tt will back at dest location and it will delete the files which are older than 14 days
+# It will back at dest location and it will delete the files which are older than 14 days
 ################################################################################################
 
 set -euo pipefail
