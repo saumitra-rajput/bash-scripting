@@ -18,7 +18,7 @@ read -p "Enter the un: " shell_type
 if id ${username} &> /dev/null; then
 	echo "User exists, exiting the code"
 else
-	echo "Creating user..."
+	echo "Creating user...."
 fi
 sudo useradd -p ${password} -s ${shell_type} -m ${username}
 echo "User created successfully"
@@ -30,4 +30,5 @@ echo "User created successfully"
 
 create_user
 create_user
+
 
